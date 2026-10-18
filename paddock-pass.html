@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>VIP Paddock Pass // Orange Army Accreditation Portal • Max Verstappen #1</title>
+    <meta name="title" content="VIP Paddock Pass // Orange Army Accreditation Portal • Max Verstappen #1" />
+    <meta name="description" content="Apply for official Orange Army VIP Paddock Pass credentials. Complete registration form, pit-lane safety agreement, and instant digital pass card generation." />
+    <meta name="keywords" content="Max Verstappen Paddock Pass, Orange Army VIP, F1 Fan Registration, Formula 1 VIP Credentials" />
+    <meta name="theme-color" content="#090B10" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Method 1: External CSS Stylesheet (Separation of Concerns) -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/src/index.css" />
+
+    <!-- CSS Method 2: Internal CSS Block (Demonstrating Rubric CSS Categories & Properties) -->
+    <style>
+      /* ==========================================================================
+         COLLEGE RUBRIC DEMONSTRATION: INTERNAL CSS (4 CATEGORIES & 5+ PROPERTIES)
+         ========================================================================== */
+
+      /* Category A: Background Properties (6 properties) */
+      .internal-pass-bg {
+        background-color: #090B10; /* 1. background-color */
+        background-image: radial-gradient(circle at 50% 20%, rgba(255, 75, 0, 0.15) 0%, rgba(9, 11, 16, 0.98) 75%); /* 2. background-image */
+        background-size: 100% 100%; /* 3. background-size */
+        background-position: top center; /* 4. background-position */
+        background-repeat: no-repeat; /* 5. background-repeat */
+        background-clip: padding-box; /* 6. background-clip */
+      }
+
+      /* Category B: Text / Font Properties (8 properties) */
+      .internal-pass-title {
+        font-family: 'Unbounded', 'Syne', sans-serif; /* 1. font-family */
+        font-size: clamp(2.5rem, 5.5vw, 4.8rem); /* 2. font-size */
+        font-weight: 900; /* 3. font-weight */
+        color: #F8FAFC; /* 4. color */
+        text-transform: uppercase; /* 5. text-transform */
+        letter-spacing: -0.04em; /* 6. letter-spacing */
+        line-height: 0.98; /* 7. line-height */
+        text-shadow: 0 0 30px rgba(255, 75, 0, 0.5); /* 8. text-shadow */
+      }
+
+      /* Category C: Dimension Properties (6 properties) */
+      .internal-pass-wrapper {
+        width: 100%; /* 1. width */
+        height: auto; /* 2. height */
+        max-width: 860px; /* 3. max-width */
+        min-height: 520px; /* 4. min-height */
+        min-width: 300px; /* 5. min-width */
+        box-sizing: border-box; /* 6. box-sizing */
+      }
+
+      /* Category D: Positioning Properties (8 properties) */
+      .internal-pass-watermark {
+        position: absolute; /* 1. position */
+        top: 24px; /* 2. top */
+        right: 24px; /* 3. right */
+        bottom: auto; /* 4. bottom */
+        left: auto; /* 5. left */
+        z-index: 10; /* 6. z-index */
+        transform: rotate(12deg); /* 7. transform */
+        display: flex; /* 8. display */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- WebGL Liquid Metaball Cursor Canvas Container -->
+    <div id="liquid-cursor-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.4;"></div>
+
+    <!-- Global Floating Glassmorphism Navbar -->
+    <header>
+      <nav id="global-navbar" class="navbar">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand">
+          <span class="brand-bar"></span>
+          <div>
+            <span class="brand-title">VERSTAPPEN</span>
+            <span class="brand-sub">WORLD CHAMPION 01</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="/index.html" data-route="/" class="nav-link">HOME</a></li>
+          <li><a href="/on-track.html" data-route="/on-track" class="nav-link">ON TRACK</a></li>
+          <li><a href="/off-track.html" data-route="/off-track" class="nav-link">OFF TRACK</a></li>
+          <li><a href="/calendar.html" data-route="/calendar" class="nav-link">CALENDAR</a></li>
+        </ul>
+
+        <!-- Navbar Actions: Paddock Pass CTA & Curtain Toggle -->
+        <div class="nav-actions">
+          <!-- CSS Method 3: Inline CSS Attribute -->
+          <a
+            id="magnetic-pass-btn"
+            href="/paddock-pass.html"
+            style="background-color: rgba(255, 75, 0, 0.15); border: 1px solid #FF4B00; transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);"
+            class="btn-paddock-pass"
+          >
+            <span class="ping-dot"></span>
+            PADDOCK PASS
+          </a>
+
+          <!-- 2-Line Animated Hamburger Button -->
+          <button id="curtain-toggle-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span id="hamburger-line-1" class="hamburger-line"></span>
+            <span id="hamburger-line-2" class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Fullscreen Curtain Navigation Overlay -->
+    <aside id="curtain-menu" class="curtain-menu">
+      <div class="curtain-header">
+        <span style="color: var(--accent-orange); font-weight: 700;">DIRECTORY // ARCHIVE NO. 01</span>
+        <span>PRESS ESC TO CLOSE</span>
+      </div>
+
+      <nav class="curtain-nav-list">
+        <div>
+          <a href="/index.html" class="curtain-nav-link">
+            <span class="curtain-index">01</span>
+            <span>THE DRIVER // HOME</span>
+          </a>
+        </div>
+        <div>
+          <a href="/on-track.html" class="curtain-nav-link">
+            <span class="curtain-index">02</span>
+            <span>ON TRACK // CAREER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/off-track.html" class="curtain-nav-link">
+            <span class="curtain-index">03</span>
+            <span>OFF TRACK // DOSSIER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/calendar.html" class="curtain-nav-link">
+            <span class="curtain-index">04</span>
+            <span>CIRCUIT TELEMETRY</span>
+          </a>
+        </div>
+        <div>
+          <a href="/paddock-pass.html" class="curtain-nav-link" style="color: var(--accent-orange);">
+            <span class="curtain-index" style="color: #FFFFFF;">05</span>
+            <span>VIP PADDOCK PASS</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="curtain-footer">
+        <span>ORACLE RED BULL RACING • FIA FORMULA ONE WORLD CHAMPION</span>
+        <span>HAZARD WARNING: HIGH DOWNFORCE RACING SIMULATION</span>
+      </div>
+    </aside>
+
+    <!-- MAIN PADDOCK PASS CONTENT -->
+    <main>
+      <!-- HERO HEADER SECTION -->
+      <section class="internal-pass-bg section-border-bottom" style="padding-top: 140px; padding-bottom: 70px; text-align: center;">
+        <div class="page-container" style="max-width: 800px;">
+          <span class="tag-badge" style="margin-bottom: 16px;">
+            ORANGE ARMY FAN ACCREDITATION
+          </span>
+          <h1 class="internal-pass-title">
+            VIP PADDOCK PASS
+          </h1>
+          <p style="font-family: var(--font-mono); font-size: 15px; color: var(--text-secondary); margin-top: 16px; line-height: 1.7;">
+            Register your official trackside credentials to receive verified access, real-time telemetry debriefs, and your digital holographic paddock identity pass.
+          </p>
+        </div>
+      </section>
+
+      <!-- VIP PRIVILEGES UNORDERED LIST (RUBRIC REQUIREMENT: <ul> #2) -->
+      <section class="section-padding section-border-bottom">
+        <div class="page-container" style="max-width: 960px;">
+          <div style="text-align: center; margin-bottom: 36px;">
+            <span class="tag-badge">ACCREDITED PRIVILEGES</span>
+            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFFFFF; margin-top: 8px;">
+              OFFICIAL PASS BENEFITS
+            </h2>
+          </div>
+
+          <!-- Semantic HTML Unordered List -->
+          <ul class="specs-ul" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <li class="spec-item">
+              <span class="spec-dot"></span>
+              <div>
+                <strong class="spec-heading">Thursday Pit Lane Walk Access</strong>
+                <span class="spec-detail">Exclusive access to the Oracle Red Bull Racing garage during official car preparation.</span>
+              </div>
+            </li>
+
+            <li class="spec-item">
+              <span class="spec-dot"></span>
+              <div>
+                <strong class="spec-heading">Live GP Radio Channel Feed</strong>
+                <span class="spec-detail">Direct unfiltered team radio audio from race engineer Gianpiero Lambiase (GP).</span>
+              </div>
+            </li>
+
+            <li class="spec-item">
+              <span class="spec-dot"></span>
+              <div>
+                <strong class="spec-heading">Zandvoort Cauldron Welcome Pack</strong>
+                <span class="spec-detail">Official Dutch Lion Orange flare kit and signed credential lanyard for the home GP.</span>
+              </div>
+            </li>
+
+            <li class="spec-item">
+              <span class="spec-dot"></span>
+              <div>
+                <strong class="spec-heading">Post-Race Telemetry Briefing</strong>
+                <span class="spec-detail">Confidential engineering trace reports detailing tire degradation, delta times, and top speeds.</span>
+              </div>
+            </li>
+
+            <li class="spec-item">
+              <span class="spec-dot"></span>
+              <div>
+                <strong class="spec-heading">Sim Rig Challenge Priority</strong>
+                <span class="spec-detail">Priority leaderboard entry in official Team Redline virtual hot-lap competitions.</span>
+              </div>
+            </li>
+
+            <li class="spec-item">
+              <span class="spec-dot"></span>
+              <div>
+                <strong class="spec-heading">FIA Holographic Digital Pass</strong>
+                <span class="spec-detail">Cryptographically sealed digital pass card suitable for mobile wallet storage.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- REGISTRATION FORM SECTION (RUBRIC REQUIREMENT: ALL 7 INPUT TYPES + JS VALIDATION) -->
+      <section class="section-padding">
+        <div class="page-container internal-pass-wrapper">
+          <div class="form-card">
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+              <span class="tag-badge">SECURE ACCREDITATION</span>
+              <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFFFFF; margin-top: 8px;">
+                APPLY FOR CREDENTIALS
+              </h2>
+              <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); margin-top: 8px;">
+                All fields marked with an asterisk (*) are mandatory for security clearance.
+              </p>
+            </div>
+
+            <!-- Semantic HTML5 Form with All 7 Input Types -->
+            <form id="paddock-pass-form" novalidate style="display: flex; flex-direction: column; gap: 28px;">
+              
+              <!-- INPUT TYPE 1: TEXT INPUT (Full Name & Call Sign) -->
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label for="applicant-name" class="form-label">Full Legal Name *</label>
+                  <input
+                    type="text"
+                    id="applicant-name"
+                    name="applicant-name"
+                    placeholder="e.g. Robin van den Berg"
+                    required
+                    class="form-input"
+                  />
+                  <span id="error-name" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="call-sign" class="form-label">Driver Call-Sign / Radio Handle</label>
+                  <input
+                    type="text"
+                    id="call-sign"
+                    name="call-sign"
+                    placeholder="e.g. DUTCH-LION-01"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <!-- INPUT TYPE 2: PASSWORD INPUT (VIP Security Passcode) -->
+              <div class="form-group">
+                <label for="security-passcode" class="form-label">VIP Access Security Passcode *</label>
+                <input
+                  type="password"
+                  id="security-passcode"
+                  name="security-passcode"
+                  placeholder="Minimum 6 characters"
+                  required
+                  class="form-input"
+                />
+                <span id="error-passcode" class="error-msg"></span>
+                <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); margin-top: 4px;">
+                  Required to authenticate mobile pitlane RFID gates and paddock telemetry feeds.
+                </p>
+              </div>
+
+              <!-- INPUT TYPE 6: SELECTION DROPDOWN (<select>) (Designated Grand Prix) -->
+              <div class="form-group">
+                <label for="circuit-choice" class="form-label">Designated Home Grand Prix Circuit *</label>
+                <select id="circuit-choice" name="circuit-choice" required class="form-select">
+                  <option value="" disabled selected>-- Select your preferred race weekend --</option>
+                  <option value="zandvoort">Circuit Zandvoort (Dutch GP - Home of the Orange Army)</option>
+                  <option value="spa">Circuit de Spa-Francorchamps (Belgian GP - Ardennes Forest)</option>
+                  <option value="redbullring">Red Bull Ring (Austrian GP - Red Bull Temple of Speed)</option>
+                  <option value="cota">Circuit of the Americas (United States GP - Austin, TX)</option>
+                  <option value="monaco">Circuit de Monaco (Monaco GP - Monte Carlo Harbor)</option>
+                  <option value="silverstone">Silverstone Circuit (British GP - Historic High Speed)</option>
+                </select>
+                <span id="error-circuit" class="error-msg"></span>
+              </div>
+
+              <!-- INPUT TYPE 4: RADIO BUTTONS (Membership Access Tier) -->
+              <div class="form-group">
+                <span class="form-label">Select Membership Access Tier *</span>
+                <div class="radio-cards-grid">
+                  <!-- Radio Option 1 -->
+                  <label class="radio-card">
+                    <input type="radio" name="membership-tier" value="Gold Lion Pass" />
+                    <div>
+                      <strong style="color: #FFFFFF; font-family: var(--font-mono); font-size: 13px; display: block;">Gold Lion Pass</strong>
+                      <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Grandstand & fan village.</span>
+                    </div>
+                  </label>
+
+                  <!-- Radio Option 2 -->
+                  <label class="radio-card">
+                    <input type="radio" name="membership-tier" value="Platinum Telemetry" />
+                    <div>
+                      <strong style="color: var(--accent-cyan); font-family: var(--font-mono); font-size: 13px; display: block;">Platinum Telemetry</strong>
+                      <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Hospitality & live telemetry.</span>
+                    </div>
+                  </label>
+
+                  <!-- Radio Option 3 -->
+                  <label class="radio-card">
+                    <input type="radio" name="membership-tier" value="Orange Army Founder" />
+                    <div>
+                      <strong style="color: var(--accent-gold); font-family: var(--font-mono); font-size: 13px; display: block;">Founder Tier</strong>
+                      <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Full VIP garage tour & meet.</span>
+                    </div>
+                  </label>
+                </div>
+                <span id="error-tier" class="error-msg"></span>
+              </div>
+
+              <!-- INPUT TYPE 3: TEXTAREA (Clearance Note & Motivation) -->
+              <div class="form-group">
+                <label for="custom-note" class="form-label">Paddock Clearance Motivation *</label>
+                <textarea
+                  id="custom-note"
+                  name="custom-note"
+                  rows="4"
+                  placeholder="Detail your racing background or reason for attending (minimum 10 characters)..."
+                  required
+                  class="form-textarea"
+                ></textarea>
+                <span id="error-note" class="error-msg"></span>
+              </div>
+
+              <!-- INPUT TYPE 5: CHECKBOXES (Safety Agreement & Communications) -->
+              <div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+                <label class="checkbox-row">
+                  <input type="checkbox" id="safety-terms" name="safety-terms" required />
+                  <span>
+                    I agree to adhere strictly to the <strong style="color: #FFFFFF;">FIA Pit Lane Safety Code & Regulations</strong>, wearing certified closed footwear and eye protection in active garages. *
+                  </span>
+                </label>
+                <span id="error-safety" class="error-msg"></span>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" id="telemetry-updates" name="telemetry-updates" checked />
+                  <span>
+                    Receive live session SMS delta briefings and weekend weather radar alerts during Grand Prix weekends.
+                  </span>
+                </label>
+              </div>
+
+              <!-- INPUT TYPE 7: SUBMIT BUTTON -->
+              <div style="text-align: center; padding-top: 12px;">
+                <button type="submit" id="paddock-submit-btn" class="btn-submit-pass">
+                  <span>ISSUE OFFICIAL PADDOCK PASS</span>
+                  <span>&rarr;</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- DYNAMIC ISSUED PASS CREDENTIAL CARD (GENERATED ON FORM SUBMIT) -->
+            <div id="credential-result-card" class="credential-modal">
+              <span class="tag-badge" style="margin-bottom: 24px; background-color: var(--accent-orange); color: #FFFFFF;">
+                ACCREDITATION CONFIRMED • PASS ACTIVE
+              </span>
+
+              <!-- Holographic VIP Pass Card -->
+              <div class="vip-card-badge">
+                <!-- Watermark Stamp -->
+                <div class="internal-pass-watermark">
+                  <span class="vip-watermark">01 VER</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 24px;">
+                  <div>
+                    <span style="font-family: var(--font-mono); font-size: 10px; color: var(--accent-orange); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">ORACLE RED BULL RACING</span>
+                    <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 900; color: #FFFFFF;">VIP PADDOCK CREDENTIAL</h3>
+                  </div>
+                  <span class="tag-badge">SEASON 2026</span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <div class="vip-row">
+                    <span style="color: var(--text-secondary);">PASS SERIAL:</span>
+                    <span id="pass-id-display" style="color: var(--accent-orange); font-weight: 800; font-size: 14px;">MV01-2026-X89A12</span>
+                  </div>
+
+                  <div class="vip-row">
+                    <span style="color: var(--text-secondary);">HOLDER NAME:</span>
+                    <span id="pass-name-display" style="color: #FFFFFF; font-weight: 800; font-size: 14px;">ROBIN VAN DEN BERG</span>
+                  </div>
+
+                  <div class="vip-row">
+                    <span style="color: var(--text-secondary);">CALL SIGN:</span>
+                    <span id="pass-callsign-display" style="color: var(--accent-cyan); font-weight: 800;">DUTCH-01</span>
+                  </div>
+
+                  <div class="vip-row">
+                    <span style="color: var(--text-secondary);">ACCESS TIER:</span>
+                    <span id="pass-tier-display" style="color: var(--accent-gold); font-weight: 800;">Orange Army Founder</span>
+                  </div>
+
+                  <div class="vip-row">
+                    <span style="color: var(--text-secondary);">CIRCUIT ASSIGNMENT:</span>
+                    <span id="pass-circuit-display" style="color: #FFFFFF; font-weight: 800;">Circuit Zandvoort</span>
+                  </div>
+
+                  <div class="vip-row" style="border-top: 1px solid var(--border-subtle); padding-top: 10px; font-size: 11px;">
+                    <span style="color: var(--text-secondary);">TIMESTAMP:</span>
+                    <span id="pass-timestamp-display" style="color: var(--text-secondary);">Sun, 18 Oct 2026 15:30:00 UTC</span>
+                  </div>
+                </div>
+
+                <!-- Barcode Simulator -->
+                <div style="margin-top: 24px; border-top: 1px solid var(--border-subtle); padding-top: 16px; text-align: center;">
+                  <div style="height: 36px; background-color: rgba(255, 255, 255, 0.08); border-radius: 6px; display: flex; align-items: center; justify-content: space-around; padding-left: 12px; padding-right: 12px;">
+                    <div style="width: 3px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 6px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 2px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 4px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 2px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 6px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 3px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 2px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 5px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 6px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 2px; height: 26px; background: #FFF;"></div>
+                    <div style="width: 4px; height: 26px; background: #FFF;"></div>
+                  </div>
+                  <span style="font-family: var(--font-mono); font-size: 10px; color: var(--text-secondary); letter-spacing: 0.15em; display: block; margin-top: 8px;">
+                    FIA ELECTRONIC VERIFICATION PASSPORT
+                  </span>
+                </div>
+              </div>
+
+              <button id="pass-reset-btn" class="btn-lock" style="margin-top: 24px;">
+                Issue Another Paddock Pass
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="brand-bar" style="height: 14px; width: 6px;"></span>
+          <strong style="color: #FFFFFF; font-family: var(--font-display);">MAX VERSTAPPEN #01</strong>
+          <span>• OFFICIAL ARCHIVE</span>
+        </div>
+        <div class="footer-nav">
+          <a href="/index.html">HOME</a>
+          <a href="/on-track.html">ON TRACK</a>
+          <a href="/off-track.html">OFF TRACK</a>
+          <a href="/calendar.html">CALENDAR</a>
+          <a href="/paddock-pass.html" style="color: var(--accent-orange);">PADDOCK PASS</a>
+        </div>
+        <div>
+          <span>&copy; 2026 MAX VERSTAPPEN. ALL RIGHTS RESERVED.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Client Script -->
+    <script type="module" src="/src/js/paddockPass.js"></script>
+  </body>
+</html>

@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Calendar // Circuit Telemetry & Live Countdown • Max Verstappen #1</title>
+    <meta name="title" content="Calendar // Circuit Telemetry & Live Countdown • Max Verstappen #1" />
+    <meta name="description" content="Official 2026 Formula 1 race calendar, live ticking countdown to Austin COTA, interactive SVG track switcher, and telemetry comparison matrix." />
+    <meta name="keywords" content="F1 Calendar, COTA Countdown, Circuit Telemetry, Track Maps, Zandvoort, Spa-Francorchamps, Red Bull Ring" />
+    <meta name="theme-color" content="#090B10" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Method 1: External CSS Stylesheet (Separation of Concerns) -->
+
+    <!-- CSS Method 2: Internal CSS Block (Demonstrating Rubric CSS Categories & Properties) -->
+    <style>.internal-calendar-bg{background-color:#090b10;background-image:linear-gradient(135deg,#ff4b0017 0%,#090b10fa 70%);background-position:50%;background-repeat:no-repeat;background-size:100% 100%;background-clip:padding-box}.internal-calendar-digit{color:#f8fafc;text-transform:uppercase;letter-spacing:-.06em;text-shadow:0 0 20px #ff4b0073;font-family:JetBrains Mono,monospace;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:.9}.internal-calendar-svgbox{box-sizing:border-box;width:100%;min-width:280px;max-width:580px;height:340px;min-height:240px}.internal-calendar-pos{z-index:15;display:flex;position:absolute;inset:20px 20px auto auto;transform:scale(1)}</style>
+    <script type="module" crossorigin src="/assets/calendar-B4yU9Jq1.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/liquidShader-BA-ckB-j.js">
+    <link rel="stylesheet" crossorigin href="/assets/liquidShader-ZE7e5s0S.css">
+  </head>
+
+  <body>
+    <!-- WebGL Liquid Metaball Cursor Canvas Container -->
+    <div id="liquid-cursor-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.4;"></div>
+
+    <!-- Global Floating Glassmorphism Navbar -->
+    <header>
+      <nav id="global-navbar" class="navbar">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand">
+          <span class="brand-bar"></span>
+          <div>
+            <span class="brand-title">VERSTAPPEN</span>
+            <span class="brand-sub">WORLD CHAMPION 01</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="/index.html" data-route="/" class="nav-link">HOME</a></li>
+          <li><a href="/on-track.html" data-route="/on-track" class="nav-link">ON TRACK</a></li>
+          <li><a href="/off-track.html" data-route="/off-track" class="nav-link">OFF TRACK</a></li>
+          <li><a href="/calendar.html" data-route="/calendar" class="nav-link active">CALENDAR</a></li>
+        </ul>
+
+        <!-- Navbar Actions: Paddock Pass CTA & Curtain Toggle -->
+        <div class="nav-actions">
+          <!-- CSS Method 3: Inline CSS Attribute -->
+          <a
+            id="magnetic-pass-btn"
+            href="/paddock-pass.html"
+            style="background-color: rgba(255, 75, 0, 0.15); border: 1px solid #FF4B00; transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);"
+            class="btn-paddock-pass"
+          >
+            <span class="ping-dot"></span>
+            PADDOCK PASS
+          </a>
+
+          <!-- 2-Line Animated Hamburger Button -->
+          <button id="curtain-toggle-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span id="hamburger-line-1" class="hamburger-line"></span>
+            <span id="hamburger-line-2" class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Fullscreen Curtain Navigation Overlay -->
+    <aside id="curtain-menu" class="curtain-menu">
+      <div class="curtain-header">
+        <span style="color: var(--accent-orange); font-weight: 700;">DIRECTORY // ARCHIVE NO. 01</span>
+        <span>PRESS ESC TO CLOSE</span>
+      </div>
+
+      <nav class="curtain-nav-list">
+        <div>
+          <a href="/index.html" class="curtain-nav-link">
+            <span class="curtain-index">01</span>
+            <span>THE DRIVER // HOME</span>
+          </a>
+        </div>
+        <div>
+          <a href="/on-track.html" class="curtain-nav-link">
+            <span class="curtain-index">02</span>
+            <span>ON TRACK // CAREER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/off-track.html" class="curtain-nav-link">
+            <span class="curtain-index">03</span>
+            <span>OFF TRACK // DOSSIER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/calendar.html" class="curtain-nav-link" style="color: var(--accent-orange);">
+            <span class="curtain-index" style="color: #FFFFFF;">04</span>
+            <span>CIRCUIT TELEMETRY</span>
+          </a>
+        </div>
+        <div>
+          <a href="/paddock-pass.html" class="curtain-nav-link">
+            <span class="curtain-index">05</span>
+            <span>VIP PADDOCK PASS</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="curtain-footer">
+        <span>ORACLE RED BULL RACING • FIA FORMULA ONE WORLD CHAMPION</span>
+        <span>HAZARD WARNING: HIGH DOWNFORCE RACING SIMULATION</span>
+      </div>
+    </aside>
+
+    <!-- MAIN CALENDAR & TELEMETRY CONTENT -->
+    <main>
+      <!-- HERO SECTION WITH LIVE RACE COUNTDOWN -->
+      <section class="internal-calendar-bg section-border-bottom" style="padding-top: 140px; padding-bottom: 80px;">
+        <div class="page-container">
+          <div class="tag-badge" style="margin-bottom: 16px;">
+            <span class="ping-dot"></span>
+            <span>LIVE RACE COUNTDOWN</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 24px;">
+            <div>
+              <h1 style="font-family: var(--font-display); font-size: clamp(2.8rem, 6.5vw, 6rem); font-weight: 900; color: #FFFFFF; letter-spacing: -0.04em;">
+                CIRCUIT TELEMETRY
+              </h1>
+              <p style="font-family: var(--font-mono); font-size: 14px; color: var(--text-secondary); margin-top: 8px;">
+                ROUND 19 // UNITED STATES GRAND PRIX • CIRCUIT OF THE AMERICAS, AUSTIN, TEXAS
+              </p>
+            </div>
+            
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px 20px; width: fit-content;">
+              <span>TARGET START: OCT 25, 2026 • 19:00 UTC</span>
+            </div>
+          </div>
+
+          <!-- Live Ticking Countdown Timer Grid -->
+          <div class="countdown-grid">
+            <div class="countdown-box">
+              <span id="countdown-days" class="internal-calendar-digit">00</span>
+              <span class="countdown-unit">DAYS</span>
+            </div>
+            <div class="countdown-box">
+              <span id="countdown-hours" class="internal-calendar-digit">00</span>
+              <span class="countdown-unit">HOURS</span>
+            </div>
+            <div class="countdown-box">
+              <span id="countdown-minutes" class="internal-calendar-digit">00</span>
+              <span class="countdown-unit">MINUTES</span>
+            </div>
+            <div class="countdown-box">
+              <span id="countdown-seconds" class="internal-calendar-digit" style="color: var(--accent-orange);">00</span>
+              <span class="countdown-unit" style="color: #FFFFFF;">SECONDS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE CIRCUIT SWITCHER SECTION -->
+      <section class="section-padding section-border-bottom">
+        <div class="page-container">
+          <span class="tag-badge">GLOBAL GRAND PRIX DESTINATIONS</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #FFFFFF; margin-top: 8px; margin-bottom: 32px;">
+            INTERACTIVE TRACK SWITCHER
+          </h2>
+
+          <!-- Circuit Navigation Buttons -->
+          <div class="filter-btn-group" style="margin-bottom: 40px;">
+            <button data-circuit-id="cota" class="btn-filter active">COTA (USA)</button>
+            <button data-circuit-id="zandvoort" class="btn-filter">ZANDVOORT (NED)</button>
+            <button data-circuit-id="spa" class="btn-filter">SPA-FRANCORCHAMPS (BEL)</button>
+            <button data-circuit-id="redbullring" class="btn-filter">RED BULL RING (AUT)</button>
+            <button data-circuit-id="monaco" class="btn-filter">MONACO (MON)</button>
+            <button data-circuit-id="silverstone" class="btn-filter">SILVERSTONE (GBR)</button>
+          </div>
+
+          <!-- Circuit Display Stage -->
+          <div style="display: grid; grid-template-columns: 1fr; gap: 32px;">
+            
+            <!-- SVG Circuit Map Preview -->
+            <div class="bento-card" style="min-height: 400px; align-items: center; justify-content: center; position: relative;">
+              <div class="internal-calendar-pos">
+                <span class="ping-dot"></span>
+              </div>
+              
+              <div class="internal-calendar-svgbox" style="display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 500 400" style="width: 100%; height: 100%; filter: drop-shadow(0 0 15px rgba(255,75,0,0.5));">
+                  <path
+                    id="circuit-svg-path"
+                    d="M 60,280 C 70,220 80,180 120,80 C 130,50 160,40 180,60 C 200,80 230,120 270,120 C 310,120 330,80 370,90 C 400,100 420,150 420,190 C 420,240 380,260 320,270 C 280,280 240,250 200,260 C 160,270 110,310 80,310 Z"
+                    fill="none"
+                    stroke="#FF4B00"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-top: auto; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">
+                <span>AERODYNAMIC VECTOR PROJECTION</span>
+                <span id="circuit-display-elevation" style="color: #FFFFFF; font-weight: 700;">41m Elevation Gain</span>
+              </div>
+            </div>
+
+            <!-- Circuit Telemetry Details & Schedule -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+              <div class="bento-card">
+                <h3 id="circuit-display-name" style="font-family: var(--font-display); font-size: 28px; font-weight: 900; color: #FFFFFF;">Circuit of the Americas</h3>
+                <p id="circuit-display-location" style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-orange); font-weight: 700; margin-top: 4px;">🇺🇸 Austin, Texas, USA • OCTOBER 23–25, 2026</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 24px; border-top: 1px solid var(--border-subtle); padding-top: 24px; font-family: var(--font-mono); font-size: 12px;">
+                  <div>
+                    <span style="color: var(--text-secondary); display: block;">TRACK LENGTH</span>
+                    <strong id="circuit-display-length" style="font-size: 16px; color: #FFFFFF;">5.513 km</strong>
+                  </div>
+                  <div>
+                    <span style="color: var(--text-secondary); display: block;">RACE DISTANCE</span>
+                    <strong id="circuit-display-laps" style="font-size: 16px; color: #FFFFFF;">56 Laps</strong>
+                  </div>
+                  <div>
+                    <span style="color: var(--text-secondary); display: block;">CORNERS</span>
+                    <strong id="circuit-display-turns" style="font-size: 16px; color: #FFFFFF;">20 Turns</strong>
+                  </div>
+                  <div>
+                    <span style="color: var(--text-secondary); display: block;">DRS ZONES</span>
+                    <strong id="circuit-display-drs" style="font-size: 16px; color: var(--accent-orange);">2 Zones</strong>
+                  </div>
+                  <div>
+                    <span style="color: var(--text-secondary); display: block;">VERSTAPPEN WINS</span>
+                    <strong id="circuit-display-wins" style="font-size: 16px; color: var(--accent-gold);">3 Victories</strong>
+                  </div>
+                  <div>
+                    <span style="color: var(--text-secondary); display: block;">LAP RECORD</span>
+                    <strong id="circuit-display-record" style="font-size: 14px; color: #FFFFFF;">1:36.169</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Weekend Schedule Container -->
+              <div class="bento-card">
+                <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); display: block; margin-bottom: 16px;">
+                  WEEKEND TRACK SCHEDULE
+                </span>
+                <ul id="circuit-sessions-list" style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+                  <!-- Injected dynamically by circuitSwitcher.js -->
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- RUBRIC ELEMENT REQUIREMENT 4: ORDERED LIST (<ol>) #2 -->
+      <!-- OFFICIAL F1 RACE WEEKEND SESSION ORDER -->
+      <section class="section-padding section-border-bottom">
+        <div class="page-container" style="max-width: 900px;">
+          <span class="tag-badge">PROCEDURAL PROTOCOL</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #FFFFFF; margin-top: 8px;">
+            F1 RACE WEEKEND SESSION ORDER
+          </h2>
+
+          <!-- Semantic HTML Ordered List -->
+          <ol class="milestones-ol">
+            <li class="milestone-item">
+              <div class="milestone-left">
+                <span class="milestone-badge-num">1</span>
+                <div>
+                  <h3 class="milestone-title">Free Practice 1 (FP1) — Aero Rake & Setup Calibration</h3>
+                  <p class="milestone-desc">60 minutes of uninterrupted track time dedicated to verifying downforce correlation, tire degradation rates on hard and medium compounds, and baseline balance adjustments.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="milestone-item">
+              <div class="milestone-left">
+                <span class="milestone-badge-num">2</span>
+                <div>
+                  <h3 class="milestone-title">Sprint Qualifying (SQ1, SQ2, SQ3) — Rapid Knockout Shootout</h3>
+                  <p class="milestone-desc">Condensed 44-minute shootout determining the starting order for Saturday's Sprint. SQ1 and SQ2 run strictly on mandatory medium tires, before SQ3 unlocks soft compound runs.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="milestone-item">
+              <div class="milestone-left">
+                <span class="milestone-badge-num">3</span>
+                <div>
+                  <h3 class="milestone-title">Sprint Race (100km / ~19 Laps) — Flat-Out Points Dash</h3>
+                  <p class="milestone-desc">A pure high-speed sprint race without mandatory tire changes. Top 8 finishers score official World Drivers' Championship points (8-7-6-5-4-3-2-1).</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="milestone-item">
+              <div class="milestone-left">
+                <span class="milestone-badge-num">4</span>
+                <div>
+                  <h3 class="milestone-title">Grand Prix Qualifying (Q1, Q2, Q3) — Pole Position Battle</h3>
+                  <p class="milestone-desc">Full 60-minute qualifying session with maximum engine deployment mode to set the 20-car starting grid for Sunday's main event.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="milestone-item">
+              <div class="milestone-left">
+                <span class="milestone-badge-num">5</span>
+                <div>
+                  <h3 class="milestone-title">The Grand Prix (305km / ~56 Laps) — Championship Main Event</h3>
+                  <p class="milestone-desc">The headline race of the weekend. Drivers must use at least two different dry tire compounds under green flag conditions, competing for 25 points and the DHL Fastest Lap point.</p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- RUBRIC ELEMENT REQUIREMENT 5: TABLE #2 -->
+      <!-- CIRCUIT TELEMETRY COMPARISON TABLE -->
+      <section class="section-padding">
+        <div class="page-container">
+          <span class="tag-badge">TELEMETRY BENCHMARK</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #FFFFFF; margin-top: 8px;">
+            CIRCUIT COMPARISON MATRIX
+          </h2>
+
+          <div class="table-container">
+            <table class="f1-table">
+              <thead>
+                <tr>
+                  <th scope="col">Circuit</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Length</th>
+                  <th scope="col">Laps</th>
+                  <th scope="col">Turns</th>
+                  <th scope="col">Top Speed</th>
+                  <th scope="col">Max G-Force</th>
+                  <th scope="col">Max Wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 700; color: #FFFFFF;">COTA</td>
+                  <td style="color: var(--text-secondary);">Austin, USA</td>
+                  <td>5.513 km</td>
+                  <td>56</td>
+                  <td>20</td>
+                  <td style="font-weight: 700; color: #FFFFFF;">338 km/h</td>
+                  <td style="color: var(--accent-orange); font-weight: 700;">5.2G (Turn 19)</td>
+                  <td><span class="tag-badge">3 Wins</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #FFFFFF;">Circuit Zandvoort</td>
+                  <td style="color: var(--text-secondary);">Zandvoort, Netherlands</td>
+                  <td>4.259 km</td>
+                  <td>72</td>
+                  <td>14</td>
+                  <td style="font-weight: 700; color: #FFFFFF;">315 km/h</td>
+                  <td style="color: var(--accent-orange); font-weight: 700;">4.8G (Turn 3 Bank)</td>
+                  <td><span class="tag-badge">3 Wins (Hat-trick)</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #FFFFFF;">Spa-Francorchamps</td>
+                  <td style="color: var(--text-secondary);">Stavelot, Belgium</td>
+                  <td>7.004 km</td>
+                  <td>44</td>
+                  <td>19</td>
+                  <td style="font-weight: 700; color: #FFFFFF;">345 km/h</td>
+                  <td style="color: var(--accent-orange); font-weight: 700;">5.6G (Pouhon)</td>
+                  <td><span class="tag-badge">3 Wins</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #FFFFFF;">Red Bull Ring</td>
+                  <td style="color: var(--text-secondary);">Spielberg, Austria</td>
+                  <td>4.318 km</td>
+                  <td>71</td>
+                  <td>10</td>
+                  <td style="font-weight: 700; color: #FFFFFF;">330 km/h</td>
+                  <td style="color: var(--accent-orange); font-weight: 700;">5.0G (Turn 9)</td>
+                  <td><span class="tag-badge tag-badge-gold">5 Wins (Record)</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #FFFFFF;">Circuit de Monaco</td>
+                  <td style="color: var(--text-secondary);">Monte Carlo, Monaco</td>
+                  <td>3.337 km</td>
+                  <td>78</td>
+                  <td>19</td>
+                  <td style="font-weight: 700; color: #FFFFFF;">290 km/h</td>
+                  <td style="color: var(--accent-orange); font-weight: 700;">4.2G (Pool)</td>
+                  <td><span class="tag-badge">2 Wins</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #FFFFFF;">Silverstone Circuit</td>
+                  <td style="color: var(--text-secondary);">Northamptonshire, UK</td>
+                  <td>5.891 km</td>
+                  <td>52</td>
+                  <td>18</td>
+                  <td style="font-weight: 700; color: #FFFFFF;">335 km/h</td>
+                  <td style="color: var(--accent-orange); font-weight: 700;">5.4G (Copse)</td>
+                  <td><span class="tag-badge">2 Wins</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="brand-bar" style="height: 14px; width: 6px;"></span>
+          <strong style="color: #FFFFFF; font-family: var(--font-display);">MAX VERSTAPPEN #01</strong>
+          <span>• OFFICIAL ARCHIVE</span>
+        </div>
+        <div class="footer-nav">
+          <a href="/index.html">HOME</a>
+          <a href="/on-track.html">ON TRACK</a>
+          <a href="/off-track.html">OFF TRACK</a>
+          <a href="/calendar.html" style="color: var(--accent-orange);">CALENDAR</a>
+          <a href="/paddock-pass.html">PADDOCK PASS</a>
+        </div>
+        <div>
+          <span>&copy; 2026 MAX VERSTAPPEN. ALL RIGHTS RESERVED.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Client Script -->
+  </body>
+</html>

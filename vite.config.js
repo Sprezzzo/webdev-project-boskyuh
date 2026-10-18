@@ -1,7 +1,17 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
+// Multi-Page HTML/CSS/JS Application Architecture
 export default defineConfig({
-  plugins: [react()],
-})
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(import.meta.dirname || __dirname, 'index.html'),
+        onTrack: resolve(import.meta.dirname || __dirname, 'on-track.html'),
+        offTrack: resolve(import.meta.dirname || __dirname, 'off-track.html'),
+        calendar: resolve(import.meta.dirname || __dirname, 'calendar.html'),
+        paddockPass: resolve(import.meta.dirname || __dirname, 'paddock-pass.html'),
+      },
+    },
+  },
+});

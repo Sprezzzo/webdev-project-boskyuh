@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Off Track // Lifestyle, GT3 & Sim Racing • Max Verstappen #1</title>
+    <meta name="title" content="Off Track // Lifestyle, GT3 & Sim Racing • Max Verstappen #1" />
+    <meta name="description" content="Discover Max Verstappen's world outside Formula 1: Team Redline sim racing, Verstappen.com Racing GT3 program, Falcon 8X aviation, and fitness regimen." />
+    <meta name="keywords" content="Max Verstappen Sim Racing, Team Redline, Verstappen.com Racing, Ferrari 296 GT3, Falcon 8X, Padel Lifestyle" />
+    <meta name="theme-color" content="#090B10" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Method 1: External CSS Stylesheet (Separation of Concerns) -->
+
+    <!-- CSS Method 2: Internal CSS Block (Demonstrating Rubric CSS Categories & Properties) -->
+    <style>.internal-offtrack-bg{background-color:#090b10;background-image:radial-gradient(at 0 0,#00e5ff14 0%,#090b10fa 75%);background-position:0 0;background-repeat:no-repeat;background-size:cover;background-clip:padding-box}.internal-offtrack-title{color:#f8fafc;text-transform:uppercase;letter-spacing:-.04em;text-shadow:0 0 30px #00e5ff59;font-family:Unbounded,Syne,sans-serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;line-height:.95}.internal-offtrack-card{box-sizing:border-box;width:100%;min-width:320px;max-width:1100px;height:auto;min-height:400px}.internal-offtrack-pos{z-index:20;display:inline-flex;position:relative;inset:0 0 auto;transform:translateY(0)}</style>
+    <script type="module" crossorigin src="/assets/offTrack-HsS5pVfO.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/liquidShader-BA-ckB-j.js">
+    <link rel="modulepreload" crossorigin href="/assets/pinScroll-BU1PPP8P.js">
+    <link rel="stylesheet" crossorigin href="/assets/liquidShader-ZE7e5s0S.css">
+  </head>
+
+  <body>
+    <!-- WebGL Liquid Metaball Cursor Canvas Container -->
+    <div id="liquid-cursor-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.4;"></div>
+
+    <!-- Global Floating Glassmorphism Navbar -->
+    <header>
+      <nav id="global-navbar" class="navbar">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand">
+          <span class="brand-bar" style="background-color: var(--accent-cyan);"></span>
+          <div>
+            <span class="brand-title">VERSTAPPEN</span>
+            <span class="brand-sub" style="color: var(--accent-cyan);">WORLD CHAMPION 01</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="/index.html" data-route="/" class="nav-link">HOME</a></li>
+          <li><a href="/on-track.html" data-route="/on-track" class="nav-link">ON TRACK</a></li>
+          <li><a href="/off-track.html" data-route="/off-track" class="nav-link active" style="color: var(--accent-cyan);">OFF TRACK</a></li>
+          <li><a href="/calendar.html" data-route="/calendar" class="nav-link">CALENDAR</a></li>
+        </ul>
+
+        <!-- Navbar Actions: Paddock Pass CTA & Curtain Toggle -->
+        <div class="nav-actions">
+          <!-- CSS Method 3: Inline CSS Attribute -->
+          <a
+            id="magnetic-pass-btn"
+            href="/paddock-pass.html"
+            style="background-color: rgba(0, 229, 255, 0.15); border: 1px solid #00E5FF; transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);"
+            class="btn-paddock-pass"
+          >
+            <span class="ping-dot" style="background-color: var(--accent-cyan);"></span>
+            PADDOCK PASS
+          </a>
+
+          <!-- 2-Line Animated Hamburger Button -->
+          <button id="curtain-toggle-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span id="hamburger-line-1" class="hamburger-line"></span>
+            <span id="hamburger-line-2" class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Fullscreen Curtain Navigation Overlay -->
+    <aside id="curtain-menu" class="curtain-menu">
+      <div class="curtain-header">
+        <span style="color: var(--accent-cyan); font-weight: 700;">DIRECTORY // ARCHIVE NO. 01</span>
+        <span>PRESS ESC TO CLOSE</span>
+      </div>
+
+      <nav class="curtain-nav-list">
+        <div>
+          <a href="/index.html" class="curtain-nav-link">
+            <span class="curtain-index">01</span>
+            <span>THE DRIVER // HOME</span>
+          </a>
+        </div>
+        <div>
+          <a href="/on-track.html" class="curtain-nav-link">
+            <span class="curtain-index">02</span>
+            <span>ON TRACK // CAREER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/off-track.html" class="curtain-nav-link" style="color: var(--accent-cyan);">
+            <span class="curtain-index" style="color: #FFFFFF;">03</span>
+            <span>OFF TRACK // DOSSIER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/calendar.html" class="curtain-nav-link">
+            <span class="curtain-index">04</span>
+            <span>CIRCUIT TELEMETRY</span>
+          </a>
+        </div>
+        <div>
+          <a href="/paddock-pass.html" class="curtain-nav-link">
+            <span class="curtain-index">05</span>
+            <span>VIP PADDOCK PASS</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="curtain-footer">
+        <span>ORACLE RED BULL RACING • FIA FORMULA ONE WORLD CHAMPION</span>
+        <span>HAZARD WARNING: HIGH DOWNFORCE RACING SIMULATION</span>
+      </div>
+    </aside>
+
+    <!-- MAIN OFF TRACK CONTENT -->
+    <main>
+      <!-- HERO HEADER SECTION -->
+      <section class="internal-offtrack-bg section-border-bottom" style="padding-top: 140px; padding-bottom: 80px;">
+        <div class="page-container">
+          <div class="internal-offtrack-pos">
+            <span class="tag-badge tag-badge-cyan">LIFESTYLE, SIM RACING & GT3 RACING</span>
+          </div>
+          <h1 class="internal-offtrack-title" style="margin-top: 20px; margin-bottom: 16px;">
+            OFF TRACK DOSSIER
+          </h1>
+          <p style="font-family: var(--font-mono); font-size: 15px; color: var(--text-secondary); max-width: 780px; line-height: 1.7;">
+            When the Formula One visor goes up, the passion for motorsport never pauses. Explore Team Redline virtual endurance esports, the Verstappen.com Racing GT3 program, Falcon 8X private aviation, and high-intensity padel training.
+          </p>
+        </div>
+      </section>
+
+      <!-- STACKED EDITORIAL STORIES CONTAINER -->
+      <section id="lifestyle-stories-container" class="section-padding">
+        <div class="page-container" style="display: flex; flex-direction: column; gap: 48px; max-width: 1100px;">
+          
+          <!-- Story 1: Team Redline Sim Racing -->
+          <article class="stacking-card-item internal-offtrack-card bento-card" style="padding: 48px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+              <span class="tag-badge">ESPORTS SIM RIG // TEAM REDLINE</span>
+              <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">24H NÜRBURGRING & LE MANS VIRTUAL</span>
+            </div>
+
+            <div style="margin-top: 32px; margin-bottom: 32px;">
+              <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFFFFF;">
+                VIRTUAL ENDURANCE MASTERY
+              </h2>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-top: 16px;">
+                Max competes regularly alongside elite sim drivers in 24-hour virtual endurance events, often logging 4-hour night stints in his bespoke home rig between F1 race weekends. Equipped with professional direct-drive wheelbases and pneumatic load-cell pedals replicating real F1 brake pressure.
+              </p>
+            </div>
+
+            <!-- Hardware Specifications -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; border-top: 1px solid var(--border-subtle); padding-top: 24px; font-family: var(--font-mono); font-size: 12px;">
+              <div>
+                <span style="color: var(--text-secondary); display: block;">SIM PLATFORM</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">iRacing & rFactor 2</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">WHEELBASE</span>
+                <strong style="color: var(--accent-orange); font-size: 14px;">Simucube 2 Ultimate (25Nm)</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">PEDAL RESISTANCE</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">130 kg Force Hydraulic</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">DISPLAYS</span>
+                <strong style="color: var(--accent-cyan); font-size: 14px;">Triple 32" 240Hz OLED</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 2: Verstappen.com Racing GT3 Program -->
+          <article class="stacking-card-item internal-offtrack-card bento-card" style="padding: 48px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+              <span class="tag-badge tag-badge-crimson">GT3 FACTORY EFFORT // VERSTAPPEN.COM RACING</span>
+              <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">DTM & GT WORLD CHALLENGE EUROPE</span>
+            </div>
+
+            <div style="margin-top: 32px; margin-bottom: 32px;">
+              <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFFFFF;">
+                VERSTAPPEN.COM RACING GT3 PROGRAM
+              </h2>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-top: 16px;">
+                Spearheaded by Max to bridge the gap between virtual sim talents and real-world GT3 competition. Partnering with Emil Frey Racing, fielding state-of-the-art Ferrari 296 GT3 cars adorned in the iconic matte Red Bull livery across the legendary circuits of Europe.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; border-top: 1px solid var(--border-subtle); padding-top: 24px; font-family: var(--font-mono); font-size: 12px;">
+              <div>
+                <span style="color: var(--text-secondary); display: block;">CHASSIS</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">Ferrari 296 GT3</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">POWER UNIT</span>
+                <strong style="color: var(--accent-crimson); font-size: 14px;">3.0L Twin-Turbo V6 (600hp)</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">TEAM PARTNER</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">Emil Frey Racing</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">SERIES</span>
+                <strong style="color: var(--accent-gold); font-size: 14px;">DTM & Sprint Cup</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 3: Dassault Falcon 8X Private Aviation -->
+          <article class="stacking-card-item internal-offtrack-card bento-card" style="padding: 48px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+              <span class="tag-badge tag-badge-gold">GLOBAL LOGISTICS // PH-DTF</span>
+              <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">RANGE: 6,450 NM • MACH 0.90</span>
+            </div>
+
+            <div style="margin-top: 32px; margin-bottom: 32px;">
+              <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFFFFF;">
+                DASSAULT FALCON 8X AVIATION
+              </h2>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-top: 16px;">
+                Traveling across 24 Grand Prix destinations worldwide requires precision aerodynamics in the sky. Max's tri-jet Falcon 8X, registered PH-DTF with bespoke matte grey livery and Dutch Lion orange winglets, provides intercontinental nonstop flight from Nice to Melbourne, Tokyo, and São Paulo.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; border-top: 1px solid var(--border-subtle); padding-top: 24px; font-family: var(--font-mono); font-size: 12px;">
+              <div>
+                <span style="color: var(--text-secondary); display: block;">REGISTRATION</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">PH-DTF</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">PROPULSION</span>
+                <strong style="color: var(--accent-gold); font-size: 14px;">3x P&WC PW307D Turbofans</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">CRUISE SPEED</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">Mach 0.90 (956 km/h)</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">CABIN ALTITUDE</span>
+                <strong style="color: var(--accent-cyan); font-size: 14px;">3,900 ft at FL410</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story 4: Monaco Padel & Conditioning -->
+          <article class="stacking-card-item internal-offtrack-card bento-card" style="padding: 48px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+              <span class="tag-badge tag-badge-cyan">ATHLETIC TRAINING // MONTE CARLO</span>
+              <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">CARDIOVASCULAR & OCULAR REFLEXES</span>
+            </div>
+
+            <div style="margin-top: 32px; margin-bottom: 32px;">
+              <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFFFFF;">
+                PADEL & HIGH-INTENSITY REFLEX REGIMEN
+              </h2>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-top: 16px;">
+                Padel has become an essential component of Max's physical preparation, developing lightning fast hand-eye coordination, rapid directional deceleration, and sustained cardiovascular stamina under high temperatures alongside trainer Bradley Scanes.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; border-top: 1px solid var(--border-subtle); padding-top: 24px; font-family: var(--font-mono); font-size: 12px;">
+              <div>
+                <span style="color: var(--text-secondary); display: block;">DISCIPLINE</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">Peripheral Reflexes & Agility</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">TRAINING BASE</span>
+                <strong style="color: var(--accent-cyan); font-size: 14px;">Tennis Padel Club de Beausoleil</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">NECK HARNESS</span>
+                <strong style="color: #FFFFFF; font-size: 14px;">45kg Isometric Resistance</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-secondary); display: block;">RESTING HEART RATE</span>
+                <strong style="color: var(--accent-orange); font-size: 14px;">42 BPM</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONNECT SECTION -->
+      <section class="section-padding section-border-top" style="text-align: center;">
+        <div class="page-container" style="max-width: 800px;">
+          <span class="tag-badge tag-badge-cyan">CONNECT WITH MAX</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; color: #FFFFFF; margin-top: 16px; margin-bottom: 20px;">
+            ACCESS THE OFFICIAL PADDOCK
+          </h2>
+          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.7;">
+            Complete the official accreditation process to receive your verified digital paddock pass card and access exclusive trackside reports.
+          </p>
+          <a href="/paddock-pass.html" class="btn-submit-pass" style="text-decoration: none; background-color: var(--accent-cyan); color: #000000; box-shadow: var(--shadow-glow-cyan);">
+            <span>APPLY FOR PADDOCK CREDENTIALS</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="brand-bar" style="height: 14px; width: 6px; background-color: var(--accent-cyan);"></span>
+          <strong style="color: #FFFFFF; font-family: var(--font-display);">MAX VERSTAPPEN #01</strong>
+          <span>• OFFICIAL ARCHIVE</span>
+        </div>
+        <div class="footer-nav">
+          <a href="/index.html">HOME</a>
+          <a href="/on-track.html">ON TRACK</a>
+          <a href="/off-track.html" style="color: var(--accent-cyan);">OFF TRACK</a>
+          <a href="/calendar.html">CALENDAR</a>
+          <a href="/paddock-pass.html">PADDOCK PASS</a>
+        </div>
+        <div>
+          <span>&copy; 2026 MAX VERSTAPPEN. ALL RIGHTS RESERVED.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Client Script -->
+  </body>
+</html>

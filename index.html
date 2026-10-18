@@ -1,24 +1,384 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary SEO Meta Tags -->
-    <title>Max Verstappen | Official Fan Hub - Oracle Red Bull Racing #1</title>
-    <meta name="title" content="Max Verstappen | Official Fan Hub - Oracle Red Bull Racing #1" />
-    <meta name="description" content="Official Max Verstappen fan platform featuring telemetry statistics, Grand Prix highlights, career trophies, and Red Bull Racing telemetry data." />
-    <meta name="keywords" content="Max Verstappen, Red Bull Racing, F1 World Champion, Formula 1, Red Bull Crimson, Dutch Lion Orange, 33, 1" />
+
+    <!-- SEO Meta Tags -->
+    <title>Max Verstappen #1 | Official Platform • 4x Formula 1 World Champion</title>
+    <meta name="title" content="Max Verstappen #1 | Official Platform • 4x Formula 1 World Champion" />
+    <meta name="description" content="Explore the authentic 3D interactive platform of 4-time F1 World Champion Max Verstappen. WebGL 3D helmet, career chronicles, and Orange Army VIP hub." />
+    <meta name="keywords" content="Max Verstappen, Oracle Red Bull Racing, F1 World Champion, Formula 1, 3D WebGL Helmet, Orange Army, Telemetry" />
     <meta name="theme-color" content="#090B10" />
 
-    <!-- Google Fonts for Racing & Modern Aesthetics -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Method 1: External CSS Stylesheet (Separation of Concerns) -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/src/index.css" />
+
+    <!-- CSS Method 2: Internal CSS Block (Demonstrating Rubric CSS Categories & Properties) -->
+    <style>
+      /* ==========================================================================
+         COLLEGE RUBRIC DEMONSTRATION: INTERNAL CSS (4 CATEGORIES & 5+ PROPERTIES)
+         ========================================================================== */
+
+      /* Category A: Background Properties (6 properties) */
+      .internal-rubric-hero-bg {
+        background-color: #090B10; /* 1. background-color */
+        background-image: radial-gradient(circle at 50% 35%, rgba(255, 75, 0, 0.12) 0%, rgba(9, 11, 16, 0.95) 75%); /* 2. background-image */
+        background-size: cover; /* 3. background-size */
+        background-position: center center; /* 4. background-position */
+        background-repeat: no-repeat; /* 5. background-repeat */
+        background-clip: padding-box; /* 6. background-clip */
+      }
+
+      /* Category B: Text / Font Properties (8 properties) */
+      .internal-rubric-heading {
+        font-family: 'Unbounded', 'Syne', sans-serif; /* 1. font-family */
+        font-size: clamp(3rem, 7vw, 6.5rem); /* 2. font-size */
+        font-weight: 900; /* 3. font-weight */
+        color: #F8FAFC; /* 4. color */
+        text-transform: uppercase; /* 5. text-transform */
+        letter-spacing: -0.04em; /* 6. letter-spacing */
+        line-height: 0.92; /* 7. line-height */
+        text-shadow: 0 0 35px rgba(255, 75, 0, 0.4); /* 8. text-shadow */
+      }
+
+      /* Category C: Dimension Properties (6 properties) */
+      .internal-rubric-viewport {
+        width: 100%; /* 1. width */
+        height: 65vh; /* 2. height */
+        max-width: 1200px; /* 3. max-width */
+        min-height: 480px; /* 4. min-height */
+        min-width: 320px; /* 5. min-width */
+        box-sizing: border-box; /* 6. box-sizing */
+      }
+
+      /* Category D: Positioning Properties (8 properties) */
+      .internal-rubric-pos {
+        position: absolute; /* 1. position */
+        top: 24px; /* 2. top */
+        right: 24px; /* 3. right */
+        bottom: auto; /* 4. bottom */
+        left: auto; /* 5. left */
+        z-index: 30; /* 6. z-index */
+        transform: translateY(0); /* 7. transform */
+        display: flex; /* 8. display */
+      }
+    </style>
   </head>
-  <body class="bg-[#090B10] text-[#F8FAFC] font-racing selection:bg-[#FF4B00] selection:text-white antialiased overflow-x-hidden min-h-screen">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+  <body>
+    <!-- WebGL Liquid Metaball Cursor Canvas Container -->
+    <div id="liquid-cursor-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.4;"></div>
+
+    <!-- Interactive Preloader Shutter -->
+    <div id="preloader-overlay" style="position: fixed; inset: 0; z-index: 100; background-color: #090B10; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+      <div style="display: flex; flex-direction: column; align-items: center; max-width: 420px; width: 100%;">
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-orange); letter-spacing: 0.15em; font-weight: 700; margin-bottom: 8px;">ORACLE RED BULL RACING // NO. 01</span>
+        <h2 style="font-family: var(--font-display); font-size: 28px; font-weight: 900; color: #FFFFFF; margin-bottom: 24px;">MAX VERSTAPPEN</h2>
+        <div style="width: 100%; height: 4px; background-color: rgba(255, 255, 255, 0.1); border-radius: 9999px; overflow: hidden; margin-bottom: 12px;">
+          <div id="preloader-progress-bar" style="height: 100%; width: 0%; background-color: var(--accent-orange);"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; width: 100%; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">
+          <span>CALIBRATING 3D ASSETS</span>
+          <span><span id="preloader-counter">0</span>%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Floating Glassmorphism Navbar -->
+    <header>
+      <nav id="global-navbar" class="navbar">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand">
+          <span class="brand-bar"></span>
+          <div>
+            <span class="brand-title">VERSTAPPEN</span>
+            <span class="brand-sub">WORLD CHAMPION 01</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="/index.html" data-route="/" class="nav-link active">HOME</a></li>
+          <li><a href="/on-track.html" data-route="/on-track" class="nav-link">ON TRACK</a></li>
+          <li><a href="/off-track.html" data-route="/off-track" class="nav-link">OFF TRACK</a></li>
+          <li><a href="/calendar.html" data-route="/calendar" class="nav-link">CALENDAR</a></li>
+        </ul>
+
+        <!-- Navbar Actions: Paddock Pass CTA & Curtain Toggle -->
+        <div class="nav-actions">
+          <!-- CSS Method 3: Inline CSS Attribute on Magnetic Button -->
+          <a
+            id="magnetic-pass-btn"
+            href="/paddock-pass.html"
+            style="background-color: rgba(255, 75, 0, 0.15); border: 1px solid #FF4B00; transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);"
+            class="btn-paddock-pass"
+          >
+            <span class="ping-dot"></span>
+            PADDOCK PASS
+          </a>
+
+          <!-- 2-Line Animated Hamburger Button -->
+          <button id="curtain-toggle-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span id="hamburger-line-1" class="hamburger-line"></span>
+            <span id="hamburger-line-2" class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Fullscreen Curtain Navigation Overlay -->
+    <aside id="curtain-menu" class="curtain-menu">
+      <div class="curtain-header">
+        <span style="color: var(--accent-orange); font-weight: 700;">DIRECTORY // ARCHIVE NO. 01</span>
+        <span>PRESS ESC TO CLOSE</span>
+      </div>
+
+      <nav class="curtain-nav-list">
+        <div>
+          <a href="/index.html" class="curtain-nav-link">
+            <span class="curtain-index">01</span>
+            <span>THE DRIVER // HOME</span>
+          </a>
+        </div>
+        <div>
+          <a href="/on-track.html" class="curtain-nav-link">
+            <span class="curtain-index">02</span>
+            <span>ON TRACK // CAREER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/off-track.html" class="curtain-nav-link">
+            <span class="curtain-index">03</span>
+            <span>OFF TRACK // DOSSIER</span>
+          </a>
+        </div>
+        <div>
+          <a href="/calendar.html" class="curtain-nav-link">
+            <span class="curtain-index">04</span>
+            <span>CIRCUIT TELEMETRY</span>
+          </a>
+        </div>
+        <div>
+          <a href="/paddock-pass.html" class="curtain-nav-link" style="color: var(--accent-orange);">
+            <span class="curtain-index" style="color: #FFFFFF;">05</span>
+            <span>VIP PADDOCK PASS</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="curtain-footer">
+        <span>ORACLE RED BULL RACING • FIA FORMULA ONE WORLD CHAMPION</span>
+        <span>HAZARD WARNING: HIGH DOWNFORCE RACING SIMULATION</span>
+      </div>
+    </aside>
+
+    <!-- MAIN HOMEPAGE CONTENT -->
+    <main>
+      <!-- HERO SECTION WITH PROCEDURAL 3D HELMET -->
+      <section class="hero-section internal-rubric-hero-bg">
+        <!-- Live Status Ticker -->
+        <div class="tag-badge" style="margin-bottom: 16px;">
+          <span class="ping-dot"></span>
+          <span>NEXT GP: COTA • AUSTIN, TX</span>
+          <span style="color: rgba(255, 255, 255, 0.2);">|</span>
+          <span style="color: var(--text-secondary);">4X FIA WORLD CHAMPION</span>
+        </div>
+
+        <!-- Big Editorial Typography -->
+        <h1 class="hero-editorial-title internal-rubric-heading">MAX VERSTAPPEN</h1>
+        <p class="hero-subtitle">ORACLE RED BULL RACING // PERMANENT DRIVER #01</p>
+
+        <!-- 3D Three.js WebGL Helmet Stage -->
+        <div class="helmet-viewport-container internal-rubric-viewport">
+          <!-- Positioned Lock Status Badge -->
+          <div class="internal-rubric-pos">
+            <span id="lock-status-badge" class="tag-badge" style="background-color: rgba(255, 255, 255, 0.05); color: var(--text-secondary); border-color: rgba(255, 255, 255, 0.1);">
+              SCROLL MODE
+            </span>
+          </div>
+
+          <!-- WebGL Canvas Mount Container -->
+          <div id="helmet-container"></div>
+
+          <!-- Bottom Control Bar with "TAP TO LOCK 360°" -->
+          <div class="lock-controls-bar">
+            <button id="tap-to-lock-btn" class="btn-lock">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--accent-orange);">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+              </svg>
+              <span class="btn-text">TAP TO LOCK 360°</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bio Strip -->
+        <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); max-width: 600px; border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-top: 12px;">
+          Max Verstappen | 28 y.o | Hasselt / Netherlands | 61 Grand Prix Wins | 40 Pole Positions | Oracle Red Bull Racing
+        </p>
+      </section>
+
+      <!-- MANIFESTO SECTION -->
+      <section class="manifesto-section">
+        <div class="page-container" style="max-width: 1000px;">
+          <span class="tag-badge">THE RACING PHILOSOPHY</span>
+          <blockquote class="manifesto-quote">
+            “Redefining limits, fighting for wins, bringing it all in all ways. Defining a legacy in Formula 1 on and off the track.”
+          </blockquote>
+          <div class="manifesto-meta">
+            <span style="font-family: var(--font-mono); font-size: 14px; font-weight: 700; color: var(--accent-orange);">MAX VERSTAPPEN #01 // WORLD CHAMPION</span>
+            <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">YOUNGEST EVER GP WINNER AT 18 • RELENTLESS RACECRAFT</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARALLAX PHOTO STREAM CHRONICLES -->
+      <section id="photo-stream-section" class="section-padding section-border-top">
+        <div class="page-container">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 48px;">
+            <span class="tag-badge">MOMENTS OF DOMINANCE</span>
+            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 900; color: #FFFFFF; margin-top: 8px;">
+              PARALLAX CHRONICLES
+            </h2>
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); margin-top: 8px;">
+              Interactive high-speed captures from Suzuka, Interlagos, Zandvoort, and the global championship trail.
+            </p>
+          </div>
+
+          <!-- Chronicles Grid -->
+          <div class="chronicles-grid">
+            <!-- Card 1 -->
+            <article data-speed="1.2" class="chronicle-card">
+              <div class="card-top">
+                <span class="tag-badge">ON TRACK</span>
+                <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">2024</span>
+              </div>
+              <div style="margin-top: auto;">
+                <h3 class="card-title">Suzuka Dominance</h3>
+                <p class="card-desc">Commanding Japanese GP victory at Honda's sacred temple of speed with a 12.5s winning gap.</p>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article data-speed="0.85" class="chronicle-card">
+              <div class="card-top">
+                <span class="tag-badge tag-badge-gold">4X CHAMPION</span>
+                <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">2024</span>
+              </div>
+              <div style="margin-top: auto;">
+                <h3 class="card-title">FIA Gala Crown</h3>
+                <p class="card-desc">Crowning of the 4th consecutive FIA Formula One World Drivers' Championship in Kigali.</p>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article data-speed="1.35" class="chronicle-card">
+              <div class="card-top">
+                <span class="tag-badge tag-badge-crimson">MASTERCLASS</span>
+                <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);">2024</span>
+              </div>
+              <div style="margin-top: auto;">
+                <h3 class="card-title">Brazil Rain Legend</h3>
+                <p class="card-desc">P17 to P1 in biblical Interlagos downpour. 17 consecutive fastest laps to seal the crown.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DUAL PORTALS NAVIGATION SECTION -->
+      <section class="section-padding section-border-top">
+        <div class="page-container">
+          <div style="text-align: center; margin-bottom: 48px;">
+            <span class="tag-badge">THE TWO REALMS</span>
+            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 900; color: #FFFFFF; margin-top: 8px;">
+              CHOOSE YOUR SECTOR
+            </h2>
+          </div>
+
+          <div class="portals-grid">
+            <!-- Portal 1: ON TRACK -->
+            <a href="/on-track.html" class="portal-card">
+              <div class="portal-watermark">01</div>
+              <div>
+                <span class="tag-badge">CAREER ARCHIVE</span>
+                <h3 class="portal-title">ON TRACK</h3>
+                <p class="card-desc">
+                  Deep-dive into 61 Grand Prix victories, career telemetry breakdown table, top 5 milestone triumphs, and junior racing roots.
+                </p>
+              </div>
+              <div class="portal-cta">
+                <span>ENTER ON TRACK DOSSIER</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+
+            <!-- Portal 2: OFF TRACK -->
+            <a href="/off-track.html" class="portal-card portal-card-cyan">
+              <div class="portal-watermark">02</div>
+              <div>
+                <span class="tag-badge tag-badge-cyan">LIFESTYLE & SIM</span>
+                <h3 class="portal-title">OFF TRACK</h3>
+                <p class="card-desc">
+                  Inside Team Redline virtual endurance esports, Verstappen.com Racing GT3 program, Falcon 8X aviation, and padel conditioning.
+                </p>
+              </div>
+              <div class="portal-cta">
+                <span>EXPLORE OFF TRACK LIFESTYLE</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORANGE ARMY VIP FAN CLUB SECTION -->
+      <section class="section-padding section-border-top" style="text-align: center; background: radial-gradient(circle at 50% 50%, rgba(255, 75, 0, 0.08) 0%, rgba(9, 11, 16, 0.98) 70%);">
+        <div class="page-container" style="max-width: 800px;">
+          <span class="tag-badge">OFFICIAL FAN PORTAL</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 900; color: #FFFFFF; margin-top: 16px; margin-bottom: 20px;">
+            JOIN THE ORANGE ARMY
+          </h2>
+          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.7;">
+            Gain verified digital paddock credentials, exclusive race weekend telemetry debriefs, and private invitations to Dutch Grand Prix grandstand gatherings.
+          </p>
+          <a href="/paddock-pass.html" class="btn-submit-pass" style="text-decoration: none;">
+            <span>REGISTER FOR PADDOCK PASS</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="brand-bar" style="height: 14px; width: 6px;"></span>
+          <strong style="color: #FFFFFF; font-family: var(--font-display);">MAX VERSTAPPEN #01</strong>
+          <span>• OFFICIAL ARCHIVE</span>
+        </div>
+        <div class="footer-nav">
+          <a href="/index.html">HOME</a>
+          <a href="/on-track.html">ON TRACK</a>
+          <a href="/off-track.html">OFF TRACK</a>
+          <a href="/calendar.html">CALENDAR</a>
+          <a href="/paddock-pass.html" style="color: var(--accent-orange);">PADDOCK PASS</a>
+        </div>
+        <div>
+          <span>&copy; 2026 MAX VERSTAPPEN. ALL RIGHTS RESERVED.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Client Orchestration Entry Script -->
+    <script type="module" src="/src/js/home.js"></script>
   </body>
 </html>
