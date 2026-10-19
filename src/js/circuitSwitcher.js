@@ -12,7 +12,7 @@ const CIRCUITS_DATABASE = {
     maxWins: '3 Victories (2021, 2022, 2023)',
     elevationChange: '41 meters (Turn 1 uphill climb)',
     color: '#FF4B00',
-    svgPath: 'M 60,280 C 70,220 80,180 120,80 C 130,50 160,40 180,60 C 200,80 230,120 270,120 C 310,120 330,80 370,90 C 400,100 420,150 420,190 C 420,240 380,260 320,270 C 280,280 240,250 200,260 C 160,270 110,310 80,310 Z',
+    image: '/assets/cota.png',
     sessions: [
       { name: 'Practice 1', time: 'FRI 12:30 CDT / 17:30 UTC' },
       { name: 'Sprint Qualifying', time: 'FRI 16:30 CDT / 21:30 UTC' },
@@ -34,7 +34,7 @@ const CIRCUITS_DATABASE = {
     maxWins: '3 Victories (2021, 2022, 2023 Hat-trick)',
     elevationChange: '18 degrees banking at Arie Luyendykbocht',
     color: '#FF4B00',
-    svgPath: 'M 80,180 C 80,100 140,60 220,60 C 320,60 400,110 400,180 C 400,240 330,290 240,290 C 160,290 140,220 110,210 C 90,200 80,195 80,180 Z',
+    image: '/assets/zandvoort.png',
     sessions: [
       { name: 'Practice 1', time: 'FRI 12:30 CEST / 10:30 UTC' },
       { name: 'Practice 2', time: 'FRI 16:00 CEST / 14:00 UTC' },
@@ -56,7 +56,7 @@ const CIRCUITS_DATABASE = {
     maxWins: '3 Victories (2021, 2022 P14-to-P1, 2023)',
     elevationChange: '102.2 meters (Eau Rouge & Raidillon)',
     color: '#E10600',
-    svgPath: 'M 100,280 C 90,220 110,140 160,90 C 210,40 290,40 340,80 C 400,120 440,210 400,270 C 360,330 280,310 220,300 C 170,290 120,330 100,280 Z',
+    image: '/assets/spa francorchamps.png',
     sessions: [
       { name: 'Practice 1', time: 'FRI 13:30 CEST / 11:30 UTC' },
       { name: 'Sprint Qualifying', time: 'FRI 17:00 CEST / 15:00 UTC' },
@@ -78,7 +78,7 @@ const CIRCUITS_DATABASE = {
     maxWins: '5 Victories (Home circuit record)',
     elevationChange: '63.5 meters full throttle crest',
     color: '#D4AF37',
-    svgPath: 'M 120,250 C 100,170 140,80 230,70 C 320,60 390,90 410,150 C 430,220 370,270 290,280 C 220,290 160,280 120,250 Z',
+    image: '/assets/Red_Bull_Ring-removebg-preview.png',
     sessions: [
       { name: 'Practice 1', time: 'FRI 12:30 CEST / 10:30 UTC' },
       { name: 'Sprint Qualifying', time: 'FRI 16:30 CEST / 14:30 UTC' },
@@ -100,7 +100,7 @@ const CIRCUITS_DATABASE = {
     maxWins: '2 Victories (2021, 2023)',
     elevationChange: '42 meters from Casino Square down to Port',
     color: '#00E5FF',
-    svgPath: 'M 90,200 C 90,120 160,60 250,70 C 330,80 390,130 380,200 C 370,260 290,280 220,270 C 160,260 120,280 90,200 Z',
+    image: '/assets/Monaco_Circuit-removebg-preview.png',
     sessions: [
       { name: 'Practice 1', time: 'FRI 13:30 CEST / 11:30 UTC' },
       { name: 'Practice 2', time: 'FRI 17:00 CEST / 15:00 UTC' },
@@ -122,7 +122,7 @@ const CIRCUITS_DATABASE = {
     maxWins: '2 Victories (70th Anniversary GP 2020, 2023)',
     elevationChange: '11.3 meters through Maggotts, Becketts & Chapel',
     color: '#FF4B00',
-    svgPath: 'M 110,220 C 100,140 180,80 280,80 C 380,80 430,160 410,240 C 380,300 290,290 220,280 C 160,270 120,280 110,220 Z',
+    image: '/assets/SilverStone-removebg-preview.png',
     sessions: [
       { name: 'Practice 1', time: 'FRI 12:30 BST / 11:30 UTC' },
       { name: 'Practice 2', time: 'FRI 16:00 BST / 15:00 UTC' },
@@ -179,7 +179,7 @@ export function initCircuitSwitcher() {
   const recordEl = document.getElementById('circuit-display-record');
   const winsEl = document.getElementById('circuit-display-wins');
   const elevationEl = document.getElementById('circuit-display-elevation');
-  const svgPathEl = document.getElementById('circuit-svg-path');
+  const imageEl = document.getElementById('circuit-display-image');
   const sessionsContainer = document.getElementById('circuit-sessions-list');
 
   const selectCircuit = (circuitId) => {
@@ -189,11 +189,15 @@ export function initCircuitSwitcher() {
     circuitButtons.forEach((btn) => {
       const id = btn.getAttribute('data-circuit-id');
       if (id === circuitId) {
-        btn.classList.add('bg-[#FF4B00]', 'text-white', 'border-[#FF4B00]', 'shadow-glow-orange');
-        btn.classList.remove('bg-white/5', 'text-[#8E96AA]', 'border-white/10');
+        btn.classList.add('active');
+        btn.style.backgroundColor = 'var(--accent-orange)';
+        btn.style.color = '#FFFFFF';
+        btn.style.borderColor = 'var(--accent-orange)';
       } else {
-        btn.classList.remove('bg-[#FF4B00]', 'text-white', 'border-[#FF4B00]', 'shadow-glow-orange');
-        btn.classList.add('bg-white/5', 'text-[#8E96AA]', 'border-white/10');
+        btn.classList.remove('active');
+        btn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+        btn.style.color = 'var(--text-secondary)';
+        btn.style.borderColor = 'rgba(255, 255, 255, 0.1)';
       }
     });
 
@@ -207,22 +211,34 @@ export function initCircuitSwitcher() {
     if (winsEl) winsEl.textContent = data.maxWins;
     if (elevationEl) elevationEl.textContent = data.elevationChange;
 
-    if (svgPathEl) {
-      svgPathEl.setAttribute('d', data.svgPath);
-      svgPathEl.style.stroke = data.color;
+    if (imageEl && data.image) {
+      imageEl.style.opacity = '0';
+      setTimeout(() => {
+        imageEl.src = data.image;
+        imageEl.alt = `${data.name} Track Layout`;
+        imageEl.style.opacity = '1';
+      }, 150);
     }
 
     if (sessionsContainer && data.sessions) {
       sessionsContainer.innerHTML = '';
       data.sessions.forEach((session, idx) => {
         const li = document.createElement('li');
-        li.className = 'flex items-center justify-between p-3 rounded-lg bg-black/30 border border-white/5 text-sm';
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.justifyContent = 'space-between';
+        li.style.padding = '12px 16px';
+        li.style.borderRadius = '10px';
+        li.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
+        li.style.border = '1px solid rgba(255, 255, 255, 0.06)';
+        li.style.fontSize = '13px';
+        li.style.fontFamily = 'var(--font-mono)';
         li.innerHTML = `
-          <div class="flex items-center gap-3">
-            <span class="w-6 h-6 rounded bg-[#FF4B00]/20 text-[#FF4B00] text-xs font-mono font-bold flex items-center justify-center">${idx + 1}</span>
-            <span class="font-bold text-white">${session.name}</span>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 4px; background-color: rgba(255, 75, 0, 0.2); color: var(--accent-orange); font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;">${idx + 1}</span>
+            <span style="font-weight: 700; color: #FFFFFF;">${session.name}</span>
           </div>
-          <span class="font-mono text-xs text-[#8E96AA]">${session.time}</span>
+          <span style="font-size: 11px; color: var(--text-secondary);">${session.time}</span>
         `;
         sessionsContainer.appendChild(li);
       });
